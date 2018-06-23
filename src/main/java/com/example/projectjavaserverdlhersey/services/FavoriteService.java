@@ -38,7 +38,7 @@ public class FavoriteService {
 		return repository.findAll();
 	}
 	@GetMapping("/api/user/{uid}/favorite")
-	public Iterable<Favorite> getAllFavoritesForUser(@PathVariable("uid") int uid) {
+	public Iterable<Favorite> findAllFavoritesForUser(@PathVariable("uid") int uid) {
 		Optional<User> data = uRepository.findById(uid);
 		if(data.isPresent()) {
 			User user = data.get();
