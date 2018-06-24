@@ -41,6 +41,18 @@ public class User {
 	public String getEmailAddr() {
 		return emailAddr;
 	}
+	public String getFirstname() {
+		return firstname;
+	}
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	public String getLastnane() {
+		return lastnane;
+	}
+	public void setLastnane(String lastnane) {
+		this.lastnane = lastnane;
+	}
 	public void setEmailAddr(String emailAddr) {
 		this.emailAddr = emailAddr;
 	}
