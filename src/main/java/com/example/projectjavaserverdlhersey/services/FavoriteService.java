@@ -29,9 +29,16 @@ public class FavoriteService {
 	
 	
 	//CREATE
-	@PostMapping("/api/favorite")
-	public Favorite createFavorite(@RequestBody Favorite favorite) {
-		return repository.save(favorite);
+	@PostMapping("/api/user/{uid}/favorite")
+	public Favorite createFavorite(@PathVariable("uid") int uid, @RequestBody Favorite nFavorite) {
+		Optional<User> data = uRepository.findById(uid);
+		if(data.isPresent()) {
+			User user = data.get();
+			Favorite favorite = nFavorite;
+			favorite.setUser(user);
+			return repository.save(favorite);
+		}
+		return null;
 	}
 	
 	//READ
