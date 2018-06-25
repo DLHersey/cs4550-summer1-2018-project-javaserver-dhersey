@@ -1,5 +1,6 @@
 package com.example.projectjavaserverdlhersey.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,7 @@ public class FavoriteService {
 		return repository.findAll();
 	}
 	@GetMapping("/api/user/{uid}/favorite")
-	public Iterable<Favorite> findAllFavoritesForUser(@PathVariable("uid") int uid) {
+	public List<Favorite> findAllFavoritesForUser(@PathVariable("uid") int uid) {
 		Optional<User> data = uRepository.findById(uid);
 		if(data.isPresent()) {
 			User user = data.get();

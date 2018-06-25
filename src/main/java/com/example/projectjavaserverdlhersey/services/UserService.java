@@ -45,9 +45,12 @@ public class UserService {
 			User user = data.get();
 			user.setUsername(nUser.getUsername());
 			user.setPassword(nUser.getPassword());
+			user.setFirstname(nUser.getFirstname());
+			user.setLastnane(nUser.getLastnane());
 			user.setRole(nUser.getRole());
 			user.setEmailAddr(nUser.getEmailAddr());
 			user.setFavorites(nUser.getFavorites());
+			repository.save(user);
 			return user;
 		}
 		return null;
